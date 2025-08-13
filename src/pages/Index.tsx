@@ -29,9 +29,9 @@ const Index = () => {
         currentSection={currentSection} 
         onSectionChange={setCurrentSection} 
       />
-      <div className="page-enter page-enter-active">
+      <main className="page-enter page-enter-active">
         {renderSection()}
-      </div>
+      </main>
     </div>
   );
 };

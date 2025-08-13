@@ -24,64 +24,18 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
 
   return (
     <>
-      {/* Mobile Menu Button */}
+      {/* Burger Menu Button - All Screen Sizes */}
       <Button
         variant="ghost"
         size="icon"
-        className="fixed top-6 right-6 z-navigation md:hidden"
+        className="fixed top-6 right-6 z-navigation"
         onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
       </Button>
 
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex fixed top-0 left-0 h-full w-80 bg-gallery-white border-r border-border z-navigation flex-col justify-between p-8">
-        <div className="space-y-8">
-          <div className="text-center border-b border-border pb-8">
-            <h1 className="font-heading text-3xl font-light tracking-wider">
-              Elizabeth Thatchers
-            </h1>
-            <p className="text-muted-foreground mt-2 text-sm tracking-wide">
-              Contemporary Artist
-            </p>
-          </div>
-
-          <ul className="space-y-6">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => handleNavClick(item.id)}
-                  className={`nav-item w-full text-left text-lg font-light tracking-wide transition-colors duration-300 ${
-                    currentSection === item.id 
-                      ? 'text-foreground' 
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="space-y-6">
-          <div className="flex space-x-4 justify-center">
-            <Button variant="ghost" size="icon">
-              <Instagram className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon">
-              <Mail className="h-5 w-5" />
-            </Button>
-          </div>
-          <div className="text-center text-sm text-muted-foreground">
-            <p>Studio Inquiries</p>
-            <p className="mt-1">contact@elizabeththatchers.com</p>
-          </div>
-        </div>
-      </nav>
-
-      {/* Mobile Navigation - Full Screen */}
-      <div className={`md:hidden fixed inset-0 bg-background z-navigation transition-all duration-500 ease-in-out ${
+      {/* Full Screen Navigation - All Screen Sizes */}
+      <div className={`fixed inset-0 bg-background z-navigation transition-all duration-500 ease-in-out ${
         isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
         <div className="h-full w-full flex flex-col justify-center items-center relative">
