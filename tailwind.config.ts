@@ -52,16 +52,29 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				gallery: {
+					white: 'hsl(var(--gallery-white))',
+					black: 'hsl(var(--gallery-black))',
+					gray: 'hsl(var(--gallery-gray))',
+					'light-gray': 'hsl(var(--gallery-light-gray))',
+					'mid-gray': 'hsl(var(--gallery-mid-gray))'
 				}
+			},
+			fontFamily: {
+				heading: 'var(--font-heading)',
+				body: 'var(--font-body)'
+			},
+			spacing: {
+				'gallery': 'var(--gallery-gap)',
+				'section': 'var(--section-padding)'
+			},
+			zIndex: {
+				navigation: 'var(--z-navigation)',
+				modal: 'var(--z-modal)',
+				overlay: 'var(--z-overlay)'
+			},
+			transitionTimingFunction: {
+				'gallery': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

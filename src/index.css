@@ -2,41 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Artist Portfolio Design System - Black & White Elegance */
 
 @layer base {
   :root {
+    /* Core Palette - Monochromatic elegance */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 0 0% 0%;
+    
+    /* Gallery whites and blacks */
+    --gallery-white: 0 0% 99%;
+    --gallery-black: 0 0% 5%;
+    --gallery-gray: 0 0% 15%;
+    --gallery-light-gray: 0 0% 95%;
+    --gallery-mid-gray: 0 0% 50%;
+    
+    /* Interactive elements */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 5%;
+    
+    /* Subtle accents */
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    
+    /* UI elements */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 5%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --popover-foreground: 0 0% 5%;
+    --border: 0 0% 90%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 0%;
+    --destructive: 0 0% 20%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Design tokens */
+    --radius: 0rem;
+    
+    /* Typography scale */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing scale for gallery */
+    --gallery-gap: 2rem;
+    --section-padding: 4rem;
+    
+    /* Animation timing */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Z-index scale */
+    --z-navigation: 100;
+    --z-modal: 200;
+    --z-overlay: 150;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,70 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  /* Gallery Grid System */
+  .gallery-grid {
+    @apply grid gap-8 auto-rows-fr;
+  }
+  
+  .gallery-grid-2 {
+    @apply grid-cols-1 md:grid-cols-2;
+  }
+  
+  .gallery-grid-3 {
+    @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+  }
+  
+  /* Image hover effects */
+  .gallery-image {
+    @apply transition-all duration-500 hover:scale-105 cursor-pointer;
+  }
+  
+  /* Navigation animations */
+  .nav-item {
+    @apply relative overflow-hidden;
+  }
+  
+  .nav-item::after {
+    @apply content-[''] absolute bottom-0 left-0 h-px bg-current transform scale-x-0 transition-transform duration-300 origin-left;
+    width: 100%;
+  }
+  
+  .nav-item:hover::after {
+    @apply scale-x-100;
+  }
+  
+  /* Smooth page transitions */
+  .page-enter {
+    @apply opacity-0 transform translate-y-4;
+    transition: var(--transition-smooth);
+  }
+  
+  .page-enter-active {
+    @apply opacity-100 transform translate-y-0;
+  }
+  
+  /* Text reveal animation */
+  .text-reveal {
+    @apply overflow-hidden;
+  }
+  
+  .text-reveal-line {
+    @apply transform translate-y-full transition-transform duration-700 ease-out;
+  }
+  
+  .text-reveal.animate .text-reveal-line {
+    @apply translate-y-0;
   }
 }
