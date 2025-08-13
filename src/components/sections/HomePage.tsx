@@ -14,24 +14,24 @@ const HomePage: React.FC<HomePageProps> = ({ onSectionChange }) => {
       src: portrait1,
       title: "Contemplation",
       category: "Portrait",
-      year: "2024"
+      year: "2025"
     },
     {
       src: landscape1,
       title: "Mountain Mist",
       category: "Landscape", 
-      year: "2024"
+      year: "2025"
     },
     {
       src: abstract1,
       title: "Geometric Flow",
       category: "Abstract",
-      year: "2023"
+      year: "2024"
     }
   ];
 
   return (
-    <main className="min-h-screen md:ml-80">
+    <main className="min-h-screen w-full">
       {/* Hero Section */}
       <section className="h-screen flex items-center justify-center px-6 md:px-12">
         <div className="max-w-4xl text-center space-y-8">

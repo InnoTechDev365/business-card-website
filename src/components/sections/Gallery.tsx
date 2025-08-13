@@ -27,7 +27,7 @@ const Gallery: React.FC = () => {
       id: '1',
       src: portrait1,
       title: 'Contemplation',
-      year: '2024',
+      year: '2025',
       technique: 'Oil on Canvas',
       category: 'portraits'
     },
@@ -35,7 +35,7 @@ const Gallery: React.FC = () => {
       id: '2', 
       src: portrait2,
       title: 'Wisdom Lines',
-      year: '2024',
+      year: '2025',
       technique: 'Charcoal Drawing',
       category: 'portraits'
     },
@@ -43,7 +43,7 @@ const Gallery: React.FC = () => {
       id: '3',
       src: landscape1,
       title: 'Mountain Mist',
-      year: '2024',
+      year: '2025',
       technique: 'Watercolor',
       category: 'landscapes'
     },
@@ -51,7 +51,7 @@ const Gallery: React.FC = () => {
       id: '4',
       src: landscape2,
       title: 'Forest Silence',
-      year: '2023',
+      year: '2024',
       technique: 'Ink Wash',
       category: 'landscapes'
     },
@@ -59,7 +59,7 @@ const Gallery: React.FC = () => {
       id: '5',
       src: abstract1,
       title: 'Geometric Flow',
-      year: '2023',
+      year: '2024',
       technique: 'Acrylic on Canvas',
       category: 'abstractions'
     },
@@ -67,7 +67,7 @@ const Gallery: React.FC = () => {
       id: '6',
       src: abstract2,
       title: 'Dynamic Balance',
-      year: '2024',
+      year: '2025',
       technique: 'Mixed Media',
       category: 'abstractions'
     }
@@ -110,7 +110,7 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen md:ml-80 py-section px-6 md:px-12">
+    <main className="min-h-screen w-full py-section px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

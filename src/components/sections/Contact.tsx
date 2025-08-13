@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen md:ml-80 py-section px-6 md:px-12">
+    <main className="min-h-screen w-full py-section px-6 md:px-12">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">

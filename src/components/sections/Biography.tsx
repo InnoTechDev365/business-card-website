@@ -3,7 +3,7 @@ import React from 'react';
 const Biography: React.FC = () => {
   const exhibitions = [
     {
-      year: '2024',
+      year: '2025',
       title: 'Contemplations',
       venue: 'Modern Art Gallery, New York',
       type: 'Solo Exhibition'
@@ -37,7 +37,7 @@ const Biography: React.FC = () => {
   ];
 
   return (
-    <main className="min-h-screen md:ml-80 py-section px-6 md:px-12">
+    <main className="min-h-screen w-full py-section px-6 md:px-12">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
