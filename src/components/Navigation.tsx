@@ -80,50 +80,73 @@ const Navigation: React.FC<NavigationProps> = ({ currentSection, onSectionChange
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
-      <div className={`md:hidden fixed inset-0 bg-background z-navigation transition-transform duration-300 ${
-        isOpen ? 'translate-x-0' : 'translate-x-full'
+      {/* Mobile Navigation - Full Screen */}
+      <div className={`md:hidden fixed inset-0 bg-background z-navigation transition-all duration-500 ease-in-out ${
+        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
-        <div className="h-full flex flex-col justify-center items-center space-y-8 p-8">
-          <div className="text-center">
-            <h1 className="font-heading text-2xl font-light tracking-wider">
-              Elizabeth Thatchers
-            </h1>
-            <p className="text-muted-foreground mt-2 text-sm tracking-wide">
-              Contemporary Artist
-            </p>
+        <div className="h-full w-full flex flex-col justify-center items-center relative">
+          {/* Animated background pattern */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gallery-white to-background opacity-50"></div>
+          
+          {/* Menu content */}
+          <div className={`relative z-10 text-center transform transition-all duration-700 ease-out ${
+            isOpen ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}>
+            {/* Artist name with delayed animation */}
+            <div className={`mb-16 transform transition-all duration-500 delay-200 ${
+              isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}>
+              <h1 className="font-heading text-4xl font-light tracking-wider mb-3">
+                Elizabeth Thatchers
+              </h1>
+              <div className="w-24 h-px bg-foreground mx-auto mb-3"></div>
+              <p className="text-muted-foreground text-lg tracking-wide">
+                Contemporary Artist
+              </p>
+            </div>
+
+            {/* Navigation items with staggered animation */}
+            <ul className="space-y-8 mb-16">
+              {navItems.map((item, index) => (
+                <li key={item.id} className={`transform transition-all duration-500 ${
+                  isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                }`} style={{ transitionDelay: `${300 + index * 100}ms` }}>
+                  <button
+                    onClick={() => handleNavClick(item.id)}
+                    className={`nav-item text-3xl font-light tracking-wider transition-all duration-300 relative group ${
+                      currentSection === item.id 
+                        ? 'text-foreground' 
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {item.label}
+                    <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full"></span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+            {/* Social links with delayed animation */}
+            <div className={`transform transition-all duration-500 delay-700 ${
+              isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}>
+              <div className="flex space-x-8 justify-center mb-6">
+                <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform duration-200">
+                  <Instagram className="h-6 w-6" />
+                </Button>
+                <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform duration-200">
+                  <Mail className="h-6 w-6" />
+                </Button>
+              </div>
+              <div className="text-center text-muted-foreground">
+                <p className="text-sm tracking-wide">contact@elizabeththatchers.com</p>
+              </div>
+            </div>
           </div>
 
-          <ul className="space-y-6 text-center">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <button
-                  onClick={() => handleNavClick(item.id)}
-                  className={`nav-item text-2xl font-light tracking-wide transition-colors duration-300 ${
-                    currentSection === item.id 
-                      ? 'text-foreground' 
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))}
-          </ul>
-
-          <div className="space-y-4">
-            <div className="flex space-x-4 justify-center">
-              <Button variant="ghost" size="icon">
-                <Instagram className="h-5 w-5" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Mail className="h-5 w-5" />
-              </Button>
-            </div>
-            <div className="text-center text-sm text-muted-foreground">
-              <p>contact@elizabeththatchers.com</p>
-            </div>
-          </div>
+          {/* Decorative elements */}
+          <div className="absolute top-1/4 left-8 w-px h-16 bg-gradient-to-b from-transparent via-muted to-transparent opacity-30"></div>
+          <div className="absolute bottom-1/4 right-8 w-px h-16 bg-gradient-to-b from-transparent via-muted to-transparent opacity-30"></div>
         </div>
       </div>
     </>
