@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Elizabeth Thatchers</title>
+    <meta name="description" content="Explore Elizabeth Thatchers' gallery of contemporary art featuring portraits, landscapes, and abstract works.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">Elizabeth Thatchers</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Full Screen Menu -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <ul class="menu-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="biography.html">Biography</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Gallery</h1>
+                <p class="page-subtitle">Explore my collection of contemporary artwork across different categories</p>
+            </div>
+
+            <!-- Gallery Navigation -->
+            <div class="gallery-nav">
+                <button class="gallery-nav-btn active" onclick="showCategory('portraits')">Portraits</button>
+                <button class="gallery-nav-btn" onclick="showCategory('landscapes')">Landscapes</button>
+                <button class="gallery-nav-btn" onclick="showCategory('abstractions')">Abstractions</button>
+            </div>
+
+            <!-- Portraits Gallery -->
+            <div class="gallery-category active" id="portraits">
+                <div class="gallery-grid-full">
+                    <div class="gallery-item" onclick="openLightbox('images/portrait-1.png', 'Wisdom Lines', 'Oil on Canvas, 2023 - Capturing the stories written in every line and expression.')" tabindex="0" role="button" aria-label="View Wisdom Lines artwork">
+                        <img src="images/portrait-1.png" alt="Wisdom Lines" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Wisdom Lines</h3>
+                            <p>Oil on Canvas, 2023</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/portrait-2.png', 'The Artist\'s Gaze', 'Charcoal on Paper, 2023 - A study of creative contemplation and artistic vision.')">
+                        <img src="images/portrait-2.png" alt="The Artist's Gaze" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>The Artist's Gaze</h3>
+                            <p>Charcoal on Paper, 2023</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/portrait-3.png', 'Contemplation', 'Oil on Canvas, 2022 - A moment of quiet reflection captured in paint.')">
+                        <img src="images/portrait-3.png" alt="Contemplation" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Contemplation</h3>
+                            <p>Oil on Canvas, 2022</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/portrait-4.png', 'The Musician', 'Acrylic on Canvas, 2022 - Capturing the passion and dedication of musical artistry.')">
+                        <img src="images/portrait-4.png" alt="The Musician" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>The Musician</h3>
+                            <p>Acrylic on Canvas, 2022</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/portrait-5.png', 'Character Study', 'Oil on Canvas, 2021 - An exploration of human character and expression.')">
+                        <img src="images/portrait-5.png" alt="Character Study" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Character Study</h3>
+                            <p>Oil on Canvas, 2021</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/portrait-6.png', 'Life Experience', 'Watercolor on Paper, 2021 - The wisdom and beauty of lived experience.')">
+                        <img src="images/portrait-6.png" alt="Life Experience" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Life Experience</h3>
+                            <p>Watercolor on Paper, 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Landscapes Gallery -->
+            <div class="gallery-category" id="landscapes">
+                <div class="gallery-grid-full">
+                    <div class="gallery-item" onclick="openLightbox('images/landscape-1.png', 'Alpine Majesty', 'Oil on Canvas, 2023 - The commanding presence of mountain peaks at dawn.')">
+                        <img src="images/landscape-1.png" alt="Alpine Majesty" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Alpine Majesty</h3>
+                            <p>Oil on Canvas, 2023</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/landscape-2.png', 'Forest Whispers', 'Acrylic on Canvas, 2023 - The secret conversations of ancient trees.')">
+                        <img src="images/landscape-2.png" alt="Forest Whispers" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Forest Whispers</h3>
+                            <p>Acrylic on Canvas, 2023</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/landscape-3.png', 'Ocean\'s Fury', 'Oil on Canvas, 2022 - The raw power and beauty of stormy seas.')">
+                        <img src="images/landscape-3.png" alt="Ocean's Fury" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Ocean's Fury</h3>
+                            <p>Oil on Canvas, 2022</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/landscape-4.png', 'Desert Solitude', 'Watercolor on Paper, 2022 - The stark beauty and silence of desert landscapes.')">
+                        <img src="images/landscape-4.png" alt="Desert Solitude" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Desert Solitude</h3>
+                            <p>Watercolor on Paper, 2022</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/landscape-1.png', 'Rural Dreams', 'Oil on Canvas, 2021 - The nostalgic charm of countryside meadows.')">
+                        <img src="images/landscape-1.png" alt="Rural Dreams" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Rural Dreams</h3>
+                            <p>Oil on Canvas, 2021</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/landscape-4.png', 'Urban Rhythms', 'Acrylic on Canvas, 2021 - The dynamic pulse and energy of city life.')">
+                        <img src="images/landscape-4.png" alt="Urban Rhythms" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Urban Rhythms</h3>
+                            <p>Acrylic on Canvas, 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abstractions Gallery -->
+            <div class="gallery-category" id="abstractions">
+                <div class="gallery-grid-full">
+                    <div class="gallery-item" onclick="openLightbox('images/abstract-1.png', 'Fluid Emotions', 'Mixed Media, 2023 - An exploration of emotional states through flowing forms.')">
+                        <img src="images/abstract-1.png" alt="Fluid Emotions" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Fluid Emotions</h3>
+                            <p>Mixed Media, 2023</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/abstract-2.png', 'Structured Chaos', 'Acrylic on Canvas, 2023 - Finding order within seemingly random arrangements.')">
+                        <img src="images/abstract-2.png" alt="Structured Chaos" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Structured Chaos</h3>
+                            <p>Acrylic on Canvas, 2023</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/abstract-3.png', 'Surface Tension', 'Oil and Sand, 2022 - Exploring texture and depth through mixed media techniques.')">
+                        <img src="images/abstract-3.png" alt="Surface Tension" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Surface Tension</h3>
+                            <p>Oil and Sand, 2022</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/abstract-4.png', 'Energy Burst', 'Acrylic on Canvas, 2022 - Capturing kinetic energy through dynamic brushstrokes.')">
+                        <img src="images/abstract-4.png" alt="Energy Burst" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Energy Burst</h3>
+                            <p>Acrylic on Canvas, 2022</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/abstract-2.png', 'Quiet Contemplation', 'Oil on Canvas, 2021 - Minimalist exploration of space and silence.')">
+                        <img src="images/abstract-2.png" alt="Quiet Contemplation" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Quiet Contemplation</h3>
+                            <p>Oil on Canvas, 2021</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" onclick="openLightbox('images/abstract-4.png', 'Natural Rhythms', 'Watercolor and Ink, 2021 - Organic patterns inspired by natural growth and decay.')">
+                        <img src="images/abstract-4.png" alt="Natural Rhythms" class="gallery-image">
+                        <div class="gallery-info">
+                            <h3>Natural Rhythms</h3>
+                            <p>Watercolor and Ink, 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-brand">Elizabeth Thatchers</p>
+            <p class="footer-copyright">&copy; 2025 All rights reserved. Contemporary Artist Portfolio.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <img class="lightbox-image" id="lightboxImage" src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightboxTitle"></h3>
+                <p id="lightboxDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
