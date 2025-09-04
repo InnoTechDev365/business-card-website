@@ -11,13 +11,7 @@ A sophisticated black and white artist portfolio website showcasing the contempo
 - **Cross-Browser Compatible**: Works on Chrome, Firefox, Safari, Edge
 - **Accessibility Features**: Keyboard navigation, focus states, reduced motion support
 - **SEO Optimized**: Proper meta tags and semantic HTML structure
-
-## Pages
-
-- **Home**: Hero section with featured artwork and artist introduction
-- **Gallery**: Interactive gallery with category filters and lightbox viewing
-- **Biography**: Artist background, achievements, and studio information
-- **Contact**: Contact form and studio location details
+ 
 
   
 ## Local Development
