@@ -19,14 +19,7 @@ A sophisticated black and white artist portfolio website showcasing the contempo
 - **Biography**: Artist background, achievements, and studio information
 - **Contact**: Contact form and studio location details
 
-## Technologies
-
-- Pure HTML5 (no frameworks)
-- CSS3 with custom properties and advanced features
-- Vanilla JavaScript for interactivity
-- Google Fonts (Playfair Display & Inter)
-- Optimized images with elegant shadows and effects
-
+  
 ## Local Development
 
 1. Clone the repository
